@@ -1,11 +1,10 @@
-import javax.swing.JPanel;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 public class todoListGUI extends JPanel {
 
@@ -16,10 +15,11 @@ public class todoListGUI extends JPanel {
 	private JButton btn_Change;
 	private JButton btn_Display;
 	private JButton btn_PrintAll;
+	private JTextField txt_edit;
 
 	public todoListGUI() {
 
-		this.lbl_TodoList = new JLabel("To-do List");
+		this.lbl_TodoList = new JLabel("To-do List");		
 
 		this.btn_New = new JButton("NEW");
 		this.btn_Add = new JButton("ADD");
@@ -27,10 +27,11 @@ public class todoListGUI extends JPanel {
 		this.btn_Change = new JButton("CHANGE");
 		this.btn_Display = new JButton("DISPLAY");
 		this.btn_PrintAll = new JButton("PRINT ALL");
+		
+		this.txt_edit = new JTextField();
+		this.txt_edit.setPreferredSize(new Dimension(50, 50));
 
 		// this.btn_CountButton.addActionListener(new ButtonListener());
-
-		// this.lbl_Counter = new JLabel("Pushes: ");
 
 		this.add(this.btn_New);
 		this.add(this.btn_Add);
@@ -38,8 +39,7 @@ public class todoListGUI extends JPanel {
 		this.add(this.btn_Change);
 		this.add(this.btn_Display);
 		this.add(this.btn_PrintAll);
-
-		// this.add(this.lbl_Counter);
+		this.add(this.txt_edit);
 
 		this.setPreferredSize(new Dimension(300, 40));
 	}
